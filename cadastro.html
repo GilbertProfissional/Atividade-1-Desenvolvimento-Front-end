@@ -12,14 +12,17 @@
 
     <header>
         <h1>Cadastro - ONG Digital</h1>
+
+        <!-- Botão Menu Mobile -->
         <button id="btnNavToggle" aria-controls="primary-navigation" aria-expanded="false">
             <span class="sr-only">Abrir Menu</span>
         </button>
 
+        <!-- Menu de Navegação -->
         <nav id="primary-navigation" aria-label="Menu Principal">
             <ul>
                 <li><a href="index.html">Início</a></li>
-                <li><a href="Projetos.html">Projetos</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
@@ -52,7 +55,6 @@
 
                     <label for="data_nascimento">Data de Nascimento:</label>
                     <input type="date" id="data_nascimento" name="data_nascimento" required>
-
                 </fieldset>
 
                 <fieldset>
@@ -118,13 +120,24 @@
         <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- Script Menu Mobile e envio do formulário -->
     <script>
+        // Menu Mobile
+        const btnNavToggle = document.getElementById("btnNavToggle");
+        const nav = document.getElementById("primary-navigation");
+
+        btnNavToggle.addEventListener("click", () => {
+            nav.classList.toggle("open");
+            const expanded = btnNavToggle.getAttribute("aria-expanded") === "true";
+            btnNavToggle.setAttribute("aria-expanded", !expanded);
+        });
+
         // Simulação de envio de formulário
         const form = document.getElementById("form-cadastro");
         form.addEventListener("submit", function(e) {
-            e.preventDefault(); // evita envio real
+            e.preventDefault();
             alert("Cadastro enviado com sucesso!");
-            form.reset(); // opcional: limpa os campos
+            form.reset();
         });
     </script>
 </body>

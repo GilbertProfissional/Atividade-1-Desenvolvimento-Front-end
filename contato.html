@@ -9,7 +9,12 @@
 <body>
     <header>
         <h1>Contato - ONG Digital</h1>
-        <nav>
+
+        <!-- Botão do menu (☰) -->
+        <button id="btnNavToggle"></button>
+
+        <!-- Menu principal -->
+        <nav id="primary-navigation">
             <ul>
                 <li><a href="index.html">Início</a></li>
                 <li><a href="projetos.html">Projetos</a></li>
@@ -23,27 +28,34 @@
     <main>
         <section>
             <h2>Fale Conosco</h2>
-         <form onsubmit="alert('Mensagem enviada com sucesso!'); return false;">
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" required>
 
-    <label for="email">E-mail:</label>
-    <input type="email" id="email" name="email" required>
+            <form onsubmit="alert('Mensagem enviada com sucesso!'); return false;">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
 
-    <label for="mensagem">Mensagem:</label>
-    <textarea id="mensagem" name="mensagem" required></textarea>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
 
-    <button type="submit">Enviar</button>
-</form>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
 
-
-
+                <button type="submit">Enviar</button>
+            </form>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Script do menu -->
+    <script>
+        const btn = document.getElementById('btnNavToggle');
+        const nav = document.getElementById('primary-navigation');
+
+        btn.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
-
